@@ -2,5 +2,5 @@
 
 com=$(echo "" | dmenu -p "run $ ")
 
-echo "executing the command"
+echo "executing the command..."
 exec $com

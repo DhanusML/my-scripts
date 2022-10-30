@@ -1,0 +1,18 @@
+#!/bin/bash
+
+type=$1
+
+if [ -f "main.tex" ];then
+	echo "main.tex already exists"
+	exit 1
+fi
+
+date=$(date +"%B %Y")
+
+case $type in
+	hw)
+		echo "generated main.pdf"
+		$(cat /home/dhanus/Documents/latex-templates/template-hw > main.tex)
+		$(sed -i 's/<<>>/'"$date"'/' main.tex)
+		;;
+esac
