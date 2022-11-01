@@ -11,8 +11,19 @@ date=$(date +"%B %Y")
 
 case $type in
 	hw)
-		echo "generated main.pdf"
+		echo "generated main.tex"
 		$(cat /home/dhanus/Documents/latex-templates/template-hw > main.tex)
+		$(sed -i 's/<<>>/'"$date"'/' main.tex)
+		;;
+
+	presentation | slide-show)
+		echo "generated main.tex"
+		$(cat /home/dhanus/Documents/latex-templates/template-presentation > main.tex)
+		;;
+
+	standard)
+		echo "generated main.tex"
+		$(cat /home/dhanus/Documents/latex-templates/template > main.tex)
 		$(sed -i 's/<<>>/'"$date"'/' main.tex)
 		;;
 esac
