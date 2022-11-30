@@ -5,12 +5,16 @@ fileName="$date""_Screenshot.jpg"
 
 if [ $# -eq 0 ]
 then
-	import $HOME/Pictures/Screenshots/$fileName
+	import $HOME/Pictures/Screenshots/$fileName && \
+		notify-send -u low -i ~/Pictures/Screenshots/$fileName\
+			"scrennshot saved" "~/Pictures/Screenshots/$fileName"
 
 else
 	if [ $1 = 's' ]
 	then
-		import -window root $HOME/Pictures/Screenshots/$fileName
+		import -window root $HOME/Pictures/Screenshots/$fileName && \
+			notify-send -u low -i ~/Pictures/Screenshots/$fileName \
+			"scrennshot saved" "~/Pictures/Screenshots/$fileName"
 	fi
 fi
 

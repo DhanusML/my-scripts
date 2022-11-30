@@ -8,6 +8,6 @@ escapedDir=$(echo $selected | sed "s/\//\\\\\//g")
 if [ -n $selected ] && [ -f "$selected" ]
 then
 	sed -ri "s/^exec_always feh --bg-scale.+/exec_always feh --bg-scale $escapedDir/" $i3config \
-		&& notify-send -u low "Wallpaper change successful"\
-		&& i3-msg 'restart'
+		&& notify-send -u low -i $selected \
+			"Wallpaper changed to $selected" && i3-msg 'restart'
 fi
