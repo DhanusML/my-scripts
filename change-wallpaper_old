@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dir="/home/dhanus/Pictures/Wallpapers"
+escapedDir=$(echo $dir | sed "s/\//\\\\\//g")
+i3config="/home/dhanus/.config/i3/config"
+selected=$(ls $dir | dmenu -l 30)
+
+if [ -n $selected ] && [ -f "$dir/$selected" ]
+then
+	sed -ri "s/^exec_always feh --bg-scale.+/exec_always feh --bg-scale $escapedDir\/$selected/" $i3config \
+		&& notify-send -u low "Wallpaper change successful"\
+		&& i3-msg 'restart'
+fi

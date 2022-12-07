@@ -1,6 +1,6 @@
 #!/bin/bash
 
-com=$(echo "" | dmenu -p "run $ ")
+com=$(echo "" | dmenu  -p "run $ ")
 
 echo "executing the command..."
 exec $com
