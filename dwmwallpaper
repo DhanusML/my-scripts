@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wallpaper=$(cat ~/.wallpaper)
+
+feh --bg-scale $wallpaper
