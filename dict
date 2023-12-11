@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec alacritty --class "dict" -e dictionary-cli

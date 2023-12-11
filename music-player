@@ -1,1 +1,3 @@
-exec st -n "music" -f "Hack Nerd Font:size=11" ncmpcpp
+#!/bin/bash
+
+exec alacritty --class "ncmpcpp" -e ncmpcpp

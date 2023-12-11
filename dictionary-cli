@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while [ 1 ]; do
+    echo -n ">>> "
+    read -r word
+    if [ -z $word ]; then
+        echo
+        continue
+    fi
+    sdcv -n $word | less
+done
