@@ -1,0 +1,15 @@
+#!/bin/bash
+
+dir="/home/dhanus/Pictures/Wallpapers"
+i3config="/home/dhanus/.config/i3/config"
+selected=$(sxiv -to $dir/*)
+escapedDir=$(echo $selected | sed "s/\//\\\\\//g")
+
+echo $escapedDir
+echo $selected
+echo $selected > ~/.wallpaper
+
+if [ -n $selected ] && [ -f "$selected" ]
+then
+	feh --bg-scale $selected
+fi

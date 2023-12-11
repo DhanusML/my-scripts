@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while true; do
+    time=$(date +"%a %d %b %Y  %H:%M:%S")
+    xsetroot -name "$time"
+    sleep 1
+done
